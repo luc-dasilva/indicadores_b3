@@ -123,7 +123,7 @@ ui <- dashboardPage(
       menuItem("Dashboard", tabName = "DashTab", icon = icon("dashboard")),
       menuItem("Indicadores", tabName = "IndTab", icon = icon("chart-bar")),
       menuItem("Demonstrações", tabName = "ReportTab", icon = icon("chart-line")),
-      menuItem("Sobre", icon = icon("info-circle"), href = "https://luc-dasilva.github.io/")
+      menuItem("Sobre", icon = icon("info-circle"), href = "https://luc-dasilva.github.io/projects/projects_list/IndB3/")
     ),
 
     selectInput(
@@ -160,7 +160,7 @@ ui <- dashboardPage(
             width = 6
           ),
           box(
-            title = "Margens",
+            title = "Margens de Lucratividade",
             status = "primary",
             solidHeader = TRUE,
             echarts4rOutput("margem_bruta"),
@@ -169,7 +169,7 @@ ui <- dashboardPage(
         ),
         fluidRow(
           box(
-            title = "Receita vs Resultado",
+            title = "Comparação entre Receita e Resultado",
             status = "primary",
             solidHeader = TRUE,
             echarts4rOutput("receita_resultado_tri"),
@@ -182,7 +182,7 @@ ui <- dashboardPage(
         tabName = "IndTab",
         fluidRow(
           box(
-            title = "Returno Sobre o PL",
+            title = "Retorno sobre o Patrimônio Líquido",
             status = "primary",
             solidHeader = TRUE,
             echarts4rOutput("profit"),
@@ -191,7 +191,7 @@ ui <- dashboardPage(
         ),
         fluidRow(
           box(
-            title = "Liquidez",
+            title = "Indicadores de Liquidez",
             status = "primary",
             solidHeader = TRUE,
             echarts4rOutput("liquidity"),
@@ -203,15 +203,6 @@ ui <- dashboardPage(
       tabItem(
         tabName = "ReportTab",
 
-        fluidRow(
-          box(
-            title = "Demostração do Resultado",
-            status = "primary",
-            solidHeader = TRUE,
-            reactableOutput("dre_tib"),
-            width = 12
-          )
-        ),
         fluidRow(
           box(
             title = "Balanço Patrimonial - Ativo",
@@ -227,6 +218,16 @@ ui <- dashboardPage(
             status = "primary",
             solidHeader = TRUE,
             reactableOutput("bpp_tib"),
+            width = 12
+          )
+        ),
+        
+        fluidRow(
+          box(
+            title = "Demostração do Resultado",
+            status = "primary",
+            solidHeader = TRUE,
+            reactableOutput("dre_tib"),
             width = 12
           )
         )
